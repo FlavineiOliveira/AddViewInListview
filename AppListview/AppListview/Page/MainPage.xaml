@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppListview.Page.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Place new controls here -->
+            <Label Text="Xamarin Forms 3.1.0.697729" 
+               HorizontalOptions="Center" />
+
+            <ListView x:Name="lista1"
+                  ItemsSource="{Binding Lista}"
+                  HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout x:Name="layout">
+                                <Label Text="{Binding Nome}"
+                                   TextColor="Black"/>
+                                <Button Command="{Binding AddButtonCommand}"
+                                    CommandParameter="{x:Reference addViews}"
+                                    Text="ADD" />
+
+                                <StackLayout x:Name="addViews" Orientation="Horizontal">
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding .}"
+                            TextColor="Red" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.GroupHeaderTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
