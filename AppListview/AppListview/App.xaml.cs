@@ -11,7 +11,9 @@ namespace AppListview
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            //MainPage = new ListaFullPage();
+            MainPage = new AddViewsListaPage();
         }
 
         protected override void OnStart()
