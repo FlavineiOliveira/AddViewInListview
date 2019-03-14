@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppListview.Page.AddViewPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="stack"
+                     Padding="10">
+            
+            <Label x:Name="MyLabel"
+                   Text="Adicionando view pela View Model"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Add View"
+                    Command="{Binding AdicionarViewCommand}"
+                    CommandParameter="{Binding Source={x:Reference stack}}" />
+
+            <Button Text="Varios parametros"
+                    Command="{Binding VariosParamCommand}"
+                    CommandParameter="{Binding Source={x:Reference stack}}" />
+
+            <Button Text="Localizar Box"
+                    Command="{Binding LocalizarBoxCommand}"
+                    CommandParameter="{Binding Source={x:Reference stack}}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

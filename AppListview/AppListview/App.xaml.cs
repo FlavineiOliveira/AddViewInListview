@@ -13,7 +13,8 @@ namespace AppListview
 
             //MainPage = new MainPage();
             //MainPage = new ListaFullPage();
-            MainPage = new AddViewsListaPage();
+            //MainPage = new AddViewsListaPage();
+            MainPage = new FindViewAndAddPage();
         }
 
         protected override void OnStart()
