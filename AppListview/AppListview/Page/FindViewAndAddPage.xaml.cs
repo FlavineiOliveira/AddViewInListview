@@ -8,11 +8,22 @@ namespace AppListview.Page
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FindViewAndAddPage : ContentPage
     {
+        FindViewAndAddViewModel findViewAndAddViewModel;
+
         public FindViewAndAddPage()
         {
             InitializeComponent();
 
-            BindingContext = new FindViewAndAddViewModel();
+            findViewAndAddViewModel = new FindViewAndAddViewModel();
+            BindingContext = findViewAndAddViewModel;
+
+            ConstruirTemplate();
+        }
+
+        public void ConstruirTemplate()
+        {
+            findViewAndAddViewModel.Lista = this.FindByName<ListView>("ListaDocs");
+            findViewAndAddViewModel.ConstruirTemplate();
         }
     }
 }
